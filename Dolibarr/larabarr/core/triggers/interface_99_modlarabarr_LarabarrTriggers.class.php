@@ -62,9 +62,7 @@ class InterfaceLarabarrTriggers extends DolibarrTriggers
 
         $this->url = $this->getUrl();
         $this->token = $this->getToken();
-        dol_syslog('---------------------------------------------------------');
-        dol_syslog($this->url);
-        dol_syslog($this->token);
+
         if (!$this->url || !$this->token) {
             dol_syslog("LARABARR ERROR: URL OR TOKEN NOT SET.");
             die();
