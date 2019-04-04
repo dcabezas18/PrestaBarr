@@ -18,5 +18,5 @@ Las funciones que realiza son las siguientes:
 - Creación de Pedido en Dolibarr con su correspondiente factura.
 - Compatible con combinaciones de productos.
 
-En principio se adapta a la función multitienda eligiendo un almacén distinto para cada tienda (Esto fue desarrollado así por necesidad propia, no debiría ser compatible con otros modelos de negocio y no afecta a un negocio con una simple tienda online).
+En principio se adapta a la función multitienda eligiendo un almacén distinto para cada tienda (Esto fue desarrollado así por necesidad propia, no debería ser compatible con otros modelos de negocio y no afecta a un negocio con una simple tienda online).
  

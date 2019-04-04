@@ -16,15 +16,15 @@
  */
 
 /**
- * \file    core/triggers/interface_99_modlarabarr_larabarrTriggers.class.php
- * \ingroup larabarr
+ * \file    core/triggers/interface_99_modprestabarr_prestabarrTriggers.class.php
+ * \ingroup prestabarr
  * \brief   Example trigger.
  *
  * Put detailed description here.
  *
  * \remarks You can create other triggers by copying this one.
  * - File name should be either:
- *      - interface_99_modlarabarr_MyTrigger.class.php
+ *      - interface_99_modprestabarr_MyTrigger.class.php
  *      - interface_99_all_MyTrigger.class.php
  * - The file must stay in core/triggers
  * - The class name must be InterfaceMytrigger
@@ -36,9 +36,9 @@ require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
 
 
 /**
- *  Class of triggers for larabarr module
+ *  Class of triggers for prestabarr module
  */
-class InterfaceLarabarrTriggers extends DolibarrTriggers
+class InterfacePrestabarrTriggers extends DolibarrTriggers
 {
 	/**
 	 * @var DoliDB Database handler
@@ -55,16 +55,16 @@ class InterfaceLarabarrTriggers extends DolibarrTriggers
 	{
 		$this->db = $db;
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
-		$this->family = "larabarr";
-		$this->description = "larabarr triggers.";
+		$this->family = "prestabarr";
+		$this->description = "prestabarr triggers.";
 		$this->version = '1.0';
-		$this->picto = 'larabarr@larabarr';
+		$this->picto = 'prestabarr@prestabarr';
 
         $this->url = $this->getUrl();
         $this->token = $this->getToken();
 
         if (!$this->url || !$this->token) {
-            dol_syslog("LARABARR ERROR: URL OR TOKEN NOT SET.");
+            dol_syslog("PRESTABARR ERROR: URL OR TOKEN NOT SET.");
             die();
         }
 	}
@@ -171,7 +171,7 @@ class InterfaceLarabarrTriggers extends DolibarrTriggers
 
     public function getUrl()
     {
-        $sql = 'SELECT * FROM ' . MAIN_DB_PREFIX . 'const WHERE name = "LARABARR_URL"';
+        $sql = 'SELECT * FROM ' . MAIN_DB_PREFIX . 'const WHERE name = "PRESTABARR_URL"';
         $res = $this->db->query($sql);
         $array = $this->db->fetch_array($res);
         return $array['value'];
@@ -179,7 +179,7 @@ class InterfaceLarabarrTriggers extends DolibarrTriggers
 
     public function getToken()
     {
-        $sql = 'SELECT * FROM ' . MAIN_DB_PREFIX . 'const WHERE name = "LARABARR_KEY"';
+        $sql = 'SELECT * FROM ' . MAIN_DB_PREFIX . 'const WHERE name = "PRESTABARR_KEY"';
         $res = $this->db->query($sql);
         $array = $this->db->fetch_array($res);
         return $array['value'];

@@ -17,9 +17,9 @@
  */
 
 /**
- * \file    htdocs/Larabarr/admin/setup.php
- * \ingroup Larabarr
- * \brief   Larabarr setup page.
+ * \file    htdocs/prestabarr/admin/setup.php
+ * \ingroup prestabarr
+ * \brief   prestabarr setup page.
  */
 
 set_time_limit(0);
@@ -43,7 +43,7 @@ global $langs, $user;
 require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
 
 // Translations
-$langs->loadLangs(array("admin", "Larabarr@Larabarr"));
+$langs->loadLangs(array("admin", "prestabarr@prestabarr"));
 
 // Access control
 if (! $user->admin) accessforbidden();
@@ -56,7 +56,7 @@ $backtopage = GETPOST('backtopage', 'alpha');
  * View
  */
 
-$page_name = "LarabarrSetup";
+$page_name = "prestabarrSetup";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
@@ -74,18 +74,18 @@ print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
 print '<input type="hidden" name="action" value="update">';
 
 print '<td> Laravel URL </td>';
-print '<td><input type="text" name="larabarr_url" class="input-large" value="'.(! empty($conf->global->LARABARR_URL)?$conf->global->LARABARR_URL:'').'" >';
+print '<td><input type="text" name="prestabarr_url" class="input-large" value="'.(! empty($conf->global->PRESTABARR_URL)?$conf->global->PRESTABARR_URL:'').'" >';
 print '</tr><tr>';
 print '<td> Laravel KEY </td>';
-print '<td><input type="text" name="larabarr_key" class="input-large" value="'.(! empty($conf->global->LARABARR_KEY)?$conf->global->LARABARR_KEY:'').'" >';
+print '<td><input type="text" name="prestabarr_key" class="input-large" value="'.(! empty($conf->global->PRESTABARR_KEY)?$conf->global->PRESTABARR_KEY:'').'" >';
 print '</tr><tr>';
 print '<td><input class="button" type="submit" value="'.$langs->trans("Save").'"></td></tr>';
 print '</form>';
 print '</table>';
 
 if ($action == 'update') {
-    dolibarr_set_const($db, 'LARABARR_URL', GETPOST('larabarr_url', 'alpha'), 'chaine', 1,'Laravel url', 1);
-    dolibarr_set_const($db, 'LARABARR_KEY', GETPOST('larabarr_key', 'alpha'), 'chaine', 1,'Laravel api key', 1);
+    dolibarr_set_const($db, 'PRESTABARR_URL', GETPOST('prestabarr_url', 'alpha'), 'chaine', 1,'Laravel url', 1);
+    dolibarr_set_const($db, 'PRESTABARR_KEY', GETPOST('prestabarr_key', 'alpha'), 'chaine', 1,'Laravel api key', 1);
 
 }
 

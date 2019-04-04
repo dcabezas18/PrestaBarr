@@ -17,12 +17,12 @@
  */
 
 /**
- * 	\defgroup   larabarr     Module larabarr
- *  \brief      larabarr module descriptor.
+ * 	\defgroup   prestabarr     Module prestabarr
+ *  \brief      prestabarr module descriptor.
  *
- *  \file       htdocs/larabarr/core/modules/modlarabarr.class.php
- *  \ingroup    larabarr
- *  \brief      Description and activation file for module larabarr
+ *  \file       htdocs/prestabarr/core/modules/modprestabarr.class.php
+ *  \ingroup    prestabarr
+ *  \brief      Description and activation file for module prestabarr
  */
 include_once(DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php');
 
@@ -31,9 +31,9 @@ include_once(DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php');
 // so we ignore the Squiz.Classes.ValidClassName.NotCamelCaps rule.
 // @codingStandardsIgnoreStart
 /**
- *  Description and activation class for module larabarr
+ *  Description and activation class for module prestabarr
  */
-class modlarabarr extends DolibarrModules
+class modprestabarr extends DolibarrModules
 {
 	// @codingStandardsIgnoreEnd
 	/**
@@ -51,7 +51,7 @@ class modlarabarr extends DolibarrModules
 		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
 		$this->numero = 12345;		// TODO Go on page https://wiki.dolibarr.org/index.php/List_of_modules_id to reserve id number for your module
 		// Key text used to identify module (for permissions, menus, etc...)
-		$this->rights_class = 'larabarr';
+		$this->rights_class = 'prestabarr';
 
 		// Family can be 'base' (core modules),'crm','financial','hr','projects','products','ecm','technic' (transverse modules),'interface' (link with external tools),'other','...'
 		// It is used to group modules by family in module setup page
@@ -61,23 +61,23 @@ class modlarabarr extends DolibarrModules
 		// Gives the possibility to the module, to provide his own family info and position of this family (Overwrite $this->family and $this->module_position. Avoid this)
 		//$this->familyinfo = array('myownfamily' => array('position' => '01', 'label' => $langs->trans("MyOwnFamily")));
 
-		// Module label (no space allowed), used if translation string 'ModulelarabarrName' not found (MyModue is name of module).
+		// Module label (no space allowed), used if translation string 'ModuleprestabarrName' not found (MyModue is name of module).
 		$this->name = preg_replace('/^mod/i','',get_class($this));
-		// Module description, used if translation string 'ModulelarabarrDesc' not found (MyModue is name of module).
-		$this->description = "larabarr";
+		// Module description, used if translation string 'ModuleprestabarrDesc' not found (MyModue is name of module).
+		$this->description = "prestabarr";
 		// Used only if file README.md and README-LL.md not found.
-		$this->descriptionlong = "larabarr (Long)";
+		$this->descriptionlong = "prestabarr (Long)";
 
 		$this->editor_name = 'Daniel Cabezas';
 		$this->editor_url = 'https://github.com/dcabezas18';
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
 		$this->version = '1.0';
-		// Key used in llx_const table to save module status enabled/disabled (where larabarr is value of property name of module in uppercase)
+		// Key used in llx_const table to save module status enabled/disabled (where prestabarr is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
         $this->const = array(
-            0=>array('LARABARR_URL','chaine','','Laravel url',1),
-            1=>array('LARABARR_KEY','chaine','','Laravel api key',1),
+            0=>array('PRESTABARR_URL','chaine','','Laravel url',1),
+            1=>array('PRESTABARR_KEY','chaine','','Laravel api key',1),
         );
 		$this->picto='generic';
 
@@ -89,14 +89,14 @@ class modlarabarr extends DolibarrModules
 
 		$this->dirs = array();
 
-		$this->config_page_url = array("setup.php@larabarr");
+		$this->config_page_url = array("setup.php@prestabarr");
 
 		// Dependencies
 		$this->hidden = false;			// A condition to hide module
 		$this->depends = array();		// List of module class names as string that must be enabled if this module is enabled
 		$this->requiredby = array();	// List of module class names to disable if this one is disabled
 		$this->conflictwith = array();	// List of module class names as string this module is in conflict with
-		$this->langfiles = array("larabarr@larabarr");
+		$this->langfiles = array("prestabarr@prestabarr");
 		$this->phpmin = array(5,3);					// Minimum version of PHP required by module
 		$this->need_dolibarr_version = array(4,0);	// Minimum version of Dolibarr required by module
 		$this->warnings_activation = array();                     // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
